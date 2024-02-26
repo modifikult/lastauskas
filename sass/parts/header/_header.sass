@@ -1,0 +1,291 @@
+.header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 100
+    background: $color-bg-light
+    .container--full
+        padding: 0 40px
+        +max-screen($breakpoint-md)
+            padding: 0 20px
+    .header-fixed &
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075)
+        .header
+            &__wrap
+                padding-top: 25px
+                padding-bottom: 25px
+                height: 150px
+                +max-screen($breakpoint-xxl)
+                    padding-top: 20px
+                    padding-bottom: 20px
+                    height: 100px
+                +max-screen($breakpoint-xl)
+                    height: 90px
+                    padding-top: 15px
+                    padding-bottom: 15px
+                +max-screen(1200px)
+                    height: 70px
+                // height: 140px
+                // +max-screen($breakpoint-xxl)
+                //     height: 100px
+                // +max-screen($breakpoint-lg)
+                //     height: 75px
+            &__logo
+                a
+                    padding-bottom: 15%
+    .header
+        &__wrap
+            // height: 175px
+            display: flex
+            align-items: center
+            transition: $default-transition
+            padding-bottom: 45px
+            padding-top: 45px
+            height: 190px
+            +max-screen($breakpoint-xxl)
+                padding-bottom: 25px
+                padding-top: 25px
+                height: 140px
+            +max-screen($breakpoint-xl)
+                padding-top: 20px
+                padding-bottom: 20px
+                height: 110px
+            +max-screen(1200px)
+                height: 80px
+            //     height: 125px
+            // +max-screen($breakpoint-lg)
+            //     height: 100px
+        &__logo
+            margin-right: auto
+            width: 25%
+            height: auto
+            +max-screen($breakpoint-xl)
+                width: 20%
+            +max-screen($breakpoint-lg)
+                width: 100%
+                max-width: 180px
+                
+            a
+                display: block
+                position: relative
+                padding-bottom: 21%
+                transition: .5s
+            img
+                position: absolute
+                inset: 0
+                width: 100%
+                height: 100%
+                object-fit: contain
+        &__nav
+            margin-left: 20px
+            +max-screen(1200px)
+                display: none
+            .menu
+                display: flex
+                align-items: center
+            .menu-item
+                font-size: 23px
+                letter-spacing: 1.88px
+                font-weight: bold
+                padding: 5px 20px
+                +max-screen($breakpoint-xxl)
+                    font-size: 20px
+                    padding: 5px 10px
+                    letter-spacing: 1px
+                +max-screen(1520px)
+                    font-size: 18px
+                +max-screen(1280px)
+                    font-size: 16px
+                &.current-menu-item
+                    a
+                        color: $color-peru
+                &.current-menu-parent
+                    .menu-item__parent a
+                        color: $color-peru
+                &.menu-item-has-children
+                    position: relative
+                    &:hover
+                        .sub-menu
+                            opacity: 1
+                            pointer-events: auto
+                    .sub-menu
+                        position: absolute
+                        top: 0
+                        left: 50%
+                        transform: translateX(-50%)
+                        width: 200px
+                        padding-top: 50px
+                        opacity: 0
+                        pointer-events: none
+                        transition: $default-transition
+                        +max-screen($breakpoint-xxl)
+                            padding-top: 37.5px
+                        .menu-item
+                            font-size: calc(23px * .9)
+                            text-align: center
+                            padding: 0 5px
+                            background: $color-bg-light
+                            +max-screen($breakpoint-xxl)
+                                font-size: calc(20px * .9)
+                            +max-screen(1520px)
+                                font-size: calc(18px * .9)
+                            +max-screen(1280px)
+                                font-size: calc(16px * .9)
+        &__toggle
+            display: none
+            +max-screen(1200px)
+                position: relative
+                display: flex
+                align-items: center
+                width: 40px
+                height: 40px
+                margin: 0 0 0 25px
+            span
+                display: block
+                position: relative
+                width: 100%
+                height: 3px
+                border-radius: 3px
+                background: $color-dark
+                &:after, &:before
+                    content: ''
+                    display: block
+                    position: absolute
+                    width: 100%
+                    height: 3px
+                    border-radius: 3px
+                    background: $color-dark
+                &:after
+                    top: 11px
+                &:before
+                    bottom: 11px
+        &__side-panel
+            display: none
+            justify-content: flex-end
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            min-height: 100vh
+            height: 100%
+            background: $color-light
+            z-index: 100
+            opacity: 0
+            pointer-events: none
+            transition: $default-transition
+            background: transparent
+            overflow: hidden
+            +max-screen(1200px)
+                display: flex
+            .header--active &
+                +max-screen(1200px)
+                    opacity: 1
+                    pointer-events: auto
+                    background: rgba(0, 0, 0, .3)
+            .header
+                &__nav
+                    display: block
+                    width: 350px
+                    height: 100%
+                    background: $color-light
+                    margin: 0
+                    padding: 37.5px 40px
+                    transform: translateX(100%)
+                    overflow-y: auto
+                    transition: $default-transition
+                    +max-screen($breakpoint-lg)
+                        padding: 30px 40px
+                    +max-screen($breakpoint-md)
+                        width: 100%
+                        padding: 30px 20px
+                    .header--active &
+                        transform: translateX(0)
+                    .menu
+                        display: flex
+                        flex-direction: column
+                        padding-top: 50px
+                        +max-screen($breakpoint-lg)
+                            padding-top: 37.5px
+                    .menu-item
+                        text-align: center
+                        padding: 7px 10px
+                        &.menu-item-has-children
+                            position: relative
+                            &.current-menu-parent
+                                .menu-item__parent
+                                    &:after
+                                        color: $color-peru
+                            .menu-item__parent
+                                display: flex
+                                align-items: center
+                                justify-content: center
+                                &:after
+                                    content: '\25bc'
+                                    font-size: 14px
+                                    color: $default-text-color
+                                    margin-left: 4px
+                            .sub-menu
+                                position: unset
+                                transform: unset
+                                width: unset
+                                opacity: unset
+                                pointer-events: unset
+                                padding-top: 0
+                                height: 0
+                                overflow: hidden
+                                .menu-item
+                                    padding: 5px 10px
+                                    background: transparent
+
+                &__close
+                    position: relative
+                    display: flex
+                    justify-content: flex-end
+                    align-items: center
+                    width: 40px
+                    height: 40px
+                    margin-left: auto
+                    span
+                        display: block
+                        position: absolute
+                        width: 100%
+                        height: 3px
+                        border-radius: 3px
+                        background: $color-dark
+                        &:nth-of-type(1)
+                            transform: rotate(-45deg)
+                        &:nth-of-type(2)
+                            transform: rotate(45deg)
+
+@keyframes showSearchBlock
+    from
+        opacity: 0
+        background: rgba(0, 0, 0, 0)
+    to
+        opacity: 1
+        background: rgba(0, 0, 0, .5)
+
+@keyframes hiddenSearchBlock
+    from
+        opacity: 1
+        background: rgba(0, 0, 0, .5)
+    to
+        opacity: 0
+        background: rgba(0, 0, 0, 0)
+
+@keyframes showSearchInput
+    0%
+        width: 0
+        opacity: 0
+    100%
+        width: 100%
+        opacity: 1
+
+@keyframes hiddenSearchInput
+    0%
+        width: 100%
+        opacity: 1
+    100%
+        width: 0
+        opacity: 0

@@ -1,0 +1,70 @@
+section.color-content-image
+    .color-content-image
+        &__wrap
+            display: flex
+            +max-screen($breakpoint-md)
+                flex-direction: column
+        &__img
+            width: 50%
+            +max-screen($breakpoint-md)
+                width: 100%
+            &-wrap
+                position: sticky
+                top: calc(190px - 32px)
+                width: 100%
+                height: 0
+                overflow: hidden
+                padding-bottom: 133.72%
+                +max-screen($breakpoint-xxl)
+                    top: calc(130px)
+                +max-screen($breakpoint-xl)
+                    top: calc(100px)
+                +max-screen(1200px)
+                    top: calc(70px)
+                +max-screen($breakpoint-md)
+                    position: relative
+                    top: 0
+                .admin-bar &
+                    top: calc(150px + 32px)
+                    +max-screen($breakpoint-xxl)
+                        top: calc(130px + 32px)
+                    +max-screen($breakpoint-xl)
+                        top: calc(100px + 32px)
+                    +max-screen(1200px)
+                        top: calc(70px + 32px)
+                    +max-screen(782px)
+                        top: calc(70px + 46px)
+                    +max-screen($breakpoint-md)
+                        top: 0
+            &.image--right
+                order: 2
+                +max-screen($breakpoint-md)
+                    order: 1
+            &.image--left
+                order: 1
+            img
+                position: absolute
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: top
+        &__content
+            max-width: 614px
+            width: 50%
+            margin: 0 auto
+            padding: 40px
+            align-self: center
+            +max-screen($breakpoint-md)
+                max-width: unset
+                width: 100%
+                padding: 60px 20px
+            &.content--right
+                order: 2
+            &.content--left
+                order: 1
+                +max-screen($breakpoint-md)
+                    order: 2
+            *:not(:last-child)
+                margin-bottom: 15px
+            h1, h2, h3
+                margin-bottom: 50px !important

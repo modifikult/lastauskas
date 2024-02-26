@@ -1,0 +1,18 @@
+section.error-page
+    .error-page
+        &__wrap
+            display: flex
+            flex-direction: column
+            justify-content: center
+            min-height: 575px
+            height: 100vh
+            +max-screen($breakpoint-xxl)
+            +max-screen($breakpoint-lg)
+        &__title
+            margin-bottom: 20px
+            h1
+                font-size: 100px !important
+                line-height: .7 !important
+        &__subtitle
+            margin-bottom: 40px
+        &__btn

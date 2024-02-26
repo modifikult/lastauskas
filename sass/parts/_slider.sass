@@ -1,0 +1,24 @@
+.slick-slider
+    .slick-dots
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 5px
+        padding-top: 40px
+        +max-screen($breakpoint-lg)
+            padding-top: 20px
+        li
+            display: flex
+            align-items: center
+            &.slick-active
+                button
+                    width: 15px
+                    height: 15px
+                    background: $color-dark
+            button
+                font-size: 0
+                border: 0
+                border-radius: 50%
+                width: 8px
+                height: 8px
+                background: $color-peru

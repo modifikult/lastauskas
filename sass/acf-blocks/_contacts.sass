@@ -1,0 +1,81 @@
+section.contacts
+    .contacts
+        &__wrap
+            display: flex
+            align-items: center
+            +max-screen($breakpoint-md)
+                flex-direction: column-reverse
+        &__img
+            width: 50%
+            +max-screen($breakpoint-md)
+                width: 100%
+            &-wrap
+                position: relative
+                width: 100%
+                // height: 0
+                overflow: hidden
+                min-height: 400px
+                +max-screen($breakpoint-md)
+                    height: 0
+                    padding-bottom: 100%
+            &.image--right
+                order: 2
+                +max-screen($breakpoint-md)
+                    order: 1
+            &.image--left
+                order: 1
+            img
+                width: auto
+                max-width: 100%
+                object-fit: cover
+                height: auto
+                +max-screen($breakpoint-md)
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    object-position: top
+        &__content
+            font-weight: 700
+            text-align: center
+            max-width: 614px
+            width: 50%
+            margin: 0 auto
+            padding-left: 40px
+            padding-right: 40px
+            +max-screen($breakpoint-xl)
+                font-size: 20px
+            +max-screen(1240px)
+                font-size: 18px
+            +max-screen($breakpoint-lg)
+                max-width: 50%
+                width: 50%
+                padding-left: 20px
+                padding-right: 20px
+            +max-screen($breakpoint-md)
+                width: 100%
+                max-width: 100%
+                padding: 60px 20px
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                aspect-ratio: 1 / 1
+                min-height: calc(50vh - 40px)
+                +max-screen($breakpoint-md)
+                    padding: 40px 20px
+                    aspect-ratio: auto
+                    min-height: 0
+            &.content--right
+                order: 2
+            &.content--left
+                order: 1
+                +max-screen($breakpoint-md)
+                    order: 2
+        &__title, &__phone, &__email
+            // font-size: 33px
+            display: block
+            +max-screen($breakpoint-lg)
+                // font-size: 22px
+
+        &__title
+            margin-bottom: 20px

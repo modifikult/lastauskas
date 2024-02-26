@@ -1,0 +1,31 @@
+section.programs
+    .programs
+        &__title
+            padding: 65px 0
+            background: $color-peru
+            text-align: center
+            a
+                font-weight: 700
+                color: $color-light
+            +max-screen($breakpoint-xxl)
+                padding: 50px 0
+            +max-screen($breakpoint-xl)
+                padding: 40px 0
+                
+        &__list
+            padding: 109px 0 96px
+            +max-screen($breakpoint-lg)
+                padding: 60px 0
+                flex-direction: column
+                align-items: center
+                gap: 35px
+    .slick-list
+        border: 1px solid $color-light-slate-gray
+        width: 100%
+    .slick-track
+        .slick-slide
+            .bg--dark
+                background: $color-light-slate-gray
+            .card-programs
+                border: 0
+                max-width: unset

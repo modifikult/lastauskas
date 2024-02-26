@@ -1,0 +1,42 @@
+.card-reviews
+    position: relative
+    max-width: 480px
+    width: 100%
+    &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        display: block
+        width: calc(100% - 40px)
+        height: 2px
+        background: $color-peru
+    &.full--text
+        .card-reviews
+            &__text
+                display: block
+            &__excerpt
+                display: none
+    .card-reviews
+        &__wrap
+            display: flex
+            flex-direction: column
+            height: 100%
+            padding: 34px 20px
+        &__text, &__excerpt
+            font-weight: 500
+            font-style: italic
+            margin-bottom: 5px
+            text-align: justify
+        &__text
+            display: none
+        &__btn
+            margin-top: auto
+            margin-left: auto
+        &__author
+            font-size: 16px
+            font-weight: 500
+            font-style: italic
+            color: $color-peru
+            margin-top: 20px

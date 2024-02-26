@@ -1,0 +1,18 @@
+.post-type-archive-reviews
+  
+  .archive__list
+    padding-bottom: 4rem
+
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    row-gap: 4rem
+
+    +max-screen($breakpoint-xl)
+      grid-template-columns: repeat(3, 1fr)
+
+    +max-screen($breakpoint-md)
+      grid-template-columns: repeat(2, 1fr)
+
+    +max-screen($breakpoint-sm)
+      grid-template-columns: repeat(1, 1fr)
+      

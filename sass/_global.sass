@@ -1,0 +1,150 @@
+html, body
+    background-color: $color-bg-light
+
+body
+    padding-top: 190px
+    //&.page-template-graphics-page
+    //    padding-top: 175px
+    &.error404
+        padding: 0
+    +max-screen($breakpoint-xxl)
+        padding-top: 117px
+        //&.page-template-graphics-page
+        //    padding-top: 125px
+        &.error404
+            padding: 0
+    +max-screen(1200px)
+        padding-top: 80px
+        &.error404
+            padding: 0
+
+#main
+    width: 100%
+    //overflow: hidden
+    min-height: calc(100vh - 551px)
+    background-color: $color-bg-light
+    padding-top: 60px
+    transition: $default-transition
+    +max-screen($breakpoint-xl)
+        padding-top: 40px
+    +max-screen($breakpoint-lg)
+        padding-top: 0
+
+
+#app-wrapper
+    padding-top: 115px
+    padding-bottom: 15px
+    .header-transparent &
+        padding-top: 0
+    +max-screen($breakpoint-xl)
+    +max-screen(1100px)
+        padding-top: 70px
+    +max-screen($breakpoint-lg)
+        padding-top: 70px
+    +max-screen($breakpoint-md)
+        padding-top: 70px
+    +max-screen($breakpoint-sm)
+        padding-top: 60px
+
+
+.divider
+    display: block
+    height: 1px
+    background: cfd0d2
+
+.app-container--y--middle
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.lottie
+    width: 100%
+    svg
+        width: 100%
+        height: auto
+
+.bg
+    &--white
+        background-color: $color-white
+
+.slider-arrows
+    .slick-arrow
+        position: absolute
+        width: 50px
+        height: 50px
+        top: 0
+        bottom: 0
+        margin: auto 0
+        right: 20px
+        transition: $default-transition
+        &.button--arrow-left
+            right: unset
+            left: 20px
+        &::after
+            margin: auto
+            display: block
+            width: 15px
+            height: 15px
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.5 1L15 8.5L13.5 10L6 2.5L7.5 1Z' fill='white' stroke='white'/%3E%3Crect x='6' y='14.5' width='10.6066' height='2.12132' transform='rotate(-45 6 14.5)' fill='white' stroke='white'/%3E%3C/svg%3E%0A")
+        &:hover
+            &::after
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.5 1L15 8.5L13.5 10L6 2.5L7.5 1Z' fill='%23f47920' stroke='%23f47920'/%3E%3Crect x='6' y='14.5' width='10.6066' height='2.12132' transform='rotate(-45 6 14.5)' fill='%23f47920' stroke='%23f47920'/%3E%3C/svg%3E%0A")
+
+.m
+    &-05
+        margin: 5px !important
+    &x-05
+        margin-left: 5px !important
+        margin-right: 5px !important
+    &r-05
+        margin-right: 5px !important
+    &l-05
+        margin-left: 5px !important
+    &y-05
+        margin-top: 5px !important
+        margin-bottom: 5px !important
+    &t-05
+        margin-top: 5px !important
+    &b-05
+        margin-block: 5px !important
+
+.m
+    &w
+        &-50
+            max-width: 50% !important
+
+.overflow-hidden
+    overflow: hidden !important
+
+.logged-in
+    .header
+        top: 32px
+        +max-screen(782px)
+            top: 46px
+        .header
+            &__side-panel
+                min-height: calc(100vh - 32px)
+                +max-screen(782px)
+                    min-height: calc(100vh - 46px)
+        .header-fixed &
+            +max-screen(600px)
+                top: 0
+            .header
+                &__side-panel
+                    .header
+                        &__nav
+                            padding: 30px 40px
+                            +max-screen($breakpoint-lg)
+                                padding: 17.5px 40px
+                            +max-screen($breakpoint-md)
+                                padding: 17.5px 20px
+
+
+
+section
+    &:first-child
+        opacity: 1
+        transform: translate(0)
+        .animate
+            opacity: 1
+            transform: translate(0)

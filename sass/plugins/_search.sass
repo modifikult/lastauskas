@@ -1,0 +1,265 @@
+.header__search
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    left: -200%
+    opacity: 0
+    transition: left 0s linear 0.3s, opacity 0.1s linear 0s
+    background: rgba(255,255,255,0.5)
+    backdrop-filter: blur(8px)
+    z-index: 10
+    &--header
+        margin-bottom: 15px
+        +max-screen($breakpoint-md)
+            margin-bottom: 0
+    .search-active &
+        opacity: 1
+        left: 0
+        transition: left 0s linear 0s, opacity 0.1s linear 0s
+        overflow-y: scroll
+    & > .container
+        height: 100%
+        display: flex
+        flex-direction: column
+    &__wrapper
+        padding-top: rem(20px)
+        padding-bottom: rem(20px)
+        +max-screen($breakpoint-lg)
+            padding-top: 85px
+        +max-screen($breakpoint-md)
+            padding-top: 15px
+        .is-search-form
+            position: relative
+        .is-search-input
+            -webkit-appearance: none
+            height: rem(48px)
+            border: none
+            padding: rem(15px 50px)
+            font-family: $font-family-base
+            width: 100%
+            background: none
+            font-size: 19px
+            line-height: 120%
+            transition: $default-transition
+            +max-screen($breakpoint-md)
+                font-size: 14px
+            &:focus
+                border: 2px solid $default-text-color
+                border-radius: 4px
+            &::placeholder
+                color: $default-text-color
+        .is-screen-reader-text
+            display: none
+        .is-search-submit
+            -webkit-appearance: none
+            position: absolute
+            left: 0
+            top: 0
+            width: rem(48px)
+            height: rem(48px)
+            background: transparent
+            border: 0
+            outline: none
+            line-height: 0px
+            .is-search-icon
+                svg
+                    width: 25px
+                    height: 25px
+                    object-fit: contain
+                path
+                    fill: $color-dark
+        .inner_block
+            position: relative
+    &__form
+        position: relative
+    &__close
+        cursor: pointer
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 5px
+        height: 25px
+        width: 25px
+        transition: 0.3s
+        +max-screen($breakpoint-md)
+            right: 12px
+            top: 50%
+            width: 16px
+            height: 16px
+            transform: translateY(-50%)
+        svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate3d(-50%,-50%,0)
+            width: 25px
+            height: auto
+            object-fit: contain
+            +max-screen($breakpoint-md)
+                width: 16px
+            path
+                stroke: $color-dark
+                transition: 0.3s
+        &:hover
+            svg
+                path
+                    stroke: #696969
+
+.is-ajax-search-result
+    position: fixed
+    top: 80px!important
+    left: 0!important
+    width: 100%!important
+    height: calc(100% - 80px)!important
+    padding: 80px 30px
+    padding-bottom: 0
+    z-index: 99999999
+    display: none
+    .search-active &
+        display: block
+
+    +max-screen($breakpoint-lg)
+        padding-bottom: 45px
+    .mCSB_container
+        margin: auto
+        max-width: 1380px
+    .is-ajax-search-posts
+        +min-screen($breakpoint-lg)
+            width: 66.66%
+            margin: auto
+            padding: rem(15px)
+    .is-ajax-search-post
+        padding: 15px 0
+        .is-title a
+            font-weight: 600
+            font-size: 24px
+            line-height: 30px
+    .is-ajax-search-items
+        max-height: 100%!important
+        height: 100%!important
+        overflow: auto
+    .mCustomScrollBox
+        max-height: 100%!important
+    .mCSB_container
+        top: 0!important
+        left: 0!important
+    .is-show-more-results
+        position: absolute
+        bottom: 20px
+        left: 30px
+        font-size: rem(14px)
+        line-height: rem(18px)
+        font-weight: 700
+        cursor: pointer
+
+.logged-in
+    .header__search 
+        top: 32px
+        &__wrapper
+            +max-screen($breakpoint-md)
+                padding-top: 29px
+
+.ajaxSearch
+    position: relative
+    &__item
+        padding-bottom: 20px
+        margin-bottom: 20px
+        order: 2
+        &::after
+            content: ""
+            position: absolute
+            left: 10px
+            right: 10px
+            width: calc(100% - 20px)
+            bottom: 0
+            height: 1px
+            background-color: $color-peru
+        +max-screen($breakpoint-sm)
+            margin-bottom: 30px
+        a
+            transition: 0.3s
+            &:hover
+                color: $color-peru
+        &--programs
+            order: 1
+    &__content
+        margin-bottom: 15px
+    &__pagination
+        .d-flex
+            justify-content: center
+        .current
+            color: $color-dark
+            font-weight: bold
+    &__inner
+        height: 100%
+        padding: 35px 0
+        // overflow-y: scroll
+        +max-screen($breakpoint-md)
+            overflow-y: auto
+    &-pagination
+        &__item
+            &:hover
+                & *
+                    color: $color-dark
+            &__link
+                padding: 0 40px
+                +max-screen($breakpoint-sm)
+                    padding: 0 10px
+        &__list
+            display: flex
+            align-items: center
+        &__btn
+            &.button--round
+                width: 48px
+                height: 48px
+                +max-screen($breakpoint-sm)
+                    width: 35px
+                    height: 35px
+                svg
+                    width: 13px
+            img
+
+            &--prev
+                transform: rotate(-180deg)
+                svg
+
+                img
+                    transform: rotate(-180deg)
+            &.disabled
+                opacity: 0.7
+                pointer-events: none
+    &__submit.button--round
+        position: absolute
+        cursor: pointer
+        top: 0
+        left: 5px
+        height: 2.66667rem
+        width: max-content
+        -webkit-transition: .3s
+        transition: .3s
+        display: flex
+        justify-content: center
+        align-items: center
+        border: none
+        background-color: transparent
+        svg
+            width: 35px
+            height: 100%
+    &__toggle
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-left: 25px
+        cursor: pointer
+        svg
+            width: 33px
+            height: auto
+
+.js-resources-container
+    transition: all .3s
+    transition-delay: .1s
+    height: 100%
+    display: flex
+    flex-direction: column

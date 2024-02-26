@@ -1,0 +1,103 @@
+section.bg-text-image
+    &.block
+        &--1
+            background: #8d9c9a
+            .bg-text-image
+                &__text
+                    color: #d3d0c1
+        &--2
+            background: #404f4f
+            .bg-text-image
+                &__text
+                    color: #d3d0c1
+        &--3
+            background: #ddd8ca
+            .bg-text-image
+                &__text
+                    color: #5e7070
+        &--4
+            background: #a27b5c
+            .bg-text-image
+                &__text
+                    color: #ded8ca
+    .bg-text-image
+        &__wrap
+            display: flex
+            //align-items: center
+            +max-screen($breakpoint-lg)
+                flex-direction: column
+        &__img
+            width: 50%
+            height: fit-content
+            position: sticky
+            top: 119px
+            +max-screen($breakpoint-xxl)
+                top: 103px
+            +max-screen(1200px)
+                top: 90px
+            +max-screen($breakpoint-lg)
+                position: unset
+                width: 100%
+            &-wrap
+                position: relative
+                width: 100%
+                height: 0
+                overflow: hidden
+                padding-bottom: 100%
+                +max-screen($breakpoint-xl)
+                    padding-bottom: 135%
+                +max-screen($breakpoint-lg)
+                    padding-bottom: 85%
+                +max-screen($breakpoint-md)
+                    padding-bottom: 100%
+            &.image--right
+                order: 2
+                +max-screen($breakpoint-lg)
+                    order: 1
+            &.image--left
+                order: 1
+            img
+                position: absolute
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: top
+                +max-screen($breakpoint-sm)
+                    object-position: center
+        &__text
+            font-size: 1.04166rem
+            color: $color-light
+            //font-weight: 500
+            max-width: 612px
+            width: 100%
+            margin: 0 auto
+            padding: 40px
+            align-self: center
+            +max-screen($breakpoint-xl)
+                max-width: 50%
+            +max-screen($breakpoint-lg)
+                max-width: unset
+                width: 100%
+                padding: 60px 20px
+            &.text--right
+                order: 2
+            &.text--left
+                order: 1
+                +max-screen($breakpoint-lg)
+                    order: 2
+            h2:not(:last-child)
+                margin-bottom: 92px
+                +max-screen($breakpoint-xxl)
+                    margin-bottom: 60px
+                +max-screen($breakpoint-xl)
+                    margin-bottom: 40px
+            p
+                font-weight: 500
+            &-wrapper
+                max-width: 80%
+                +max-screen($breakpoint-lg)
+                    max-width: 100%
+                h3
+                   +max-screen(1200px)
+                        +min-screen($breakpoint-lg)
+                            font-size: 18px 

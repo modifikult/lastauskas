@@ -1,0 +1,172 @@
+.footer
+    background: $color-peru
+    .container
+        +max-screen($breakpoint-lg)
+            width: 450px
+        +max-screen($breakpoint-md)
+            width: 375px
+        +max-screen($breakpoint-sm)
+            width: 100%
+    .footer
+        &__wrap
+            padding: 71px 0
+            display: flex
+            justify-content: space-between
+            +max-screen($breakpoint-xxl)
+                padding: 60px 0
+            +max-screen($breakpoint-md)
+                padding: 35px 0
+            +max-screen($breakpoint-lg)
+                flex-direction: column
+                gap: 60px
+        &__col
+            &.col--left
+                +max-screen($breakpoint-md)
+                    order: 2
+            &.col--right
+                display: flex
+                justify-content: flex-end
+                max-width: 466px
+                width: 100%
+                +max-screen($breakpoint-md)
+                    order: 1
+                    justify-content: flex-start
+        &__title
+            // font-size: 34px
+            font-weight: 500
+            font-style: italic
+            margin-bottom: 56px
+            +max-screen($breakpoint-xxl)
+                margin-bottom: 40px
+            +max-screen($breakpoint-xl)
+                margin-bottom: 30px
+            +max-screen($breakpoint-xl)
+                text-align: center
+            +max-screen($breakpoint-md)
+                margin-bottom: 25px
+        &__contacts
+            display: flex
+            flex-direction: column
+            margin-bottom: 48px
+            +max-screen($breakpoint-xxl)
+                margin-bottom: 40px
+            +max-screen($breakpoint-xl)
+                margin-bottom: 30px
+            +max-screen($breakpoint-lg)
+                text-align: center
+                align-items: center
+                gap: 6px
+            +max-screen($breakpoint-md)
+                margin-bottom: 25px
+            span, a
+                color: $color-light-gray
+            a
+                &:hover
+                    color: $color-dark
+        &__social
+            display: flex
+            gap: 22px
+            margin-bottom: 92px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 30px
+                justify-content: center
+            +max-screen($breakpoint-md)
+                margin-bottom: 25px
+            a
+                position: relative
+                width: 15%
+                max-width: 45px
+                aspect-ratio:  1 / 1
+                display: flex
+                align-items: center
+                justify-content: center
+                border-radius: 50%
+                background: $color-dark
+                transition: $default-transition
+                &:hover
+                    transform: scale(1.15)
+                img
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    height: 40%
+                    width: auto
+                    transition: $default-transition
+        &__copyright
+            color: $color-light
+            // font-size: 19px
+            display: flex
+            flex-wrap: wrap
+            gap: 10px 20px
+            +max-screen($breakpoint-lg)
+                justify-content: center
+        &__google
+            width: 100%
+            height: fit-content
+            // padding: 30px 40px 15px 120px
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            justify-content: center
+            .ti-widget
+                width: auto
+                &.ti-goog 
+                    .ti-header:hover
+                        transform: translate(0) !important
+                .ti-widget-container
+                    margin-bottom: 0
+                    .ti-header
+                        padding: 0
+                        &:hover
+                            background: transparent !important
+                            border-color: transparent !important
+                    .ti-name
+                        color: $color-light-gray !important
+                        font-size: clamp(16px, 1vw , 20px) !important
+                        margin-bottom: 0 !important
+                    .ti-rating-text
+                        color: $color-light-gray !important
+                        font-size: clamp(16px, 1vw , 20px) !important
+                    .ti-stars
+                        display: flex
+                        align-items: center
+                        margin-bottom: 1rem
+                        margin-top: 1rem
+                        .ti-rating
+                            background: transparent
+                            color: rgb(246,187,6)
+                            padding: 0
+                            top: 0
+                            margin-right: 7px
+                            font-size: clamp(15px, 0.9vw , 18px) !important
+                        .ti-star
+                            width: 30px
+                            height: 30px
+                            +max-screen($breakpoint-xxl)
+                                width: 25px
+                                height: 25px
+                    .ti-text
+                        color: $color-white
+            .button
+                margin-top: 1rem
+                margin-left: 80px
+                +max-screen($breakpoint-lg)
+                    margin-left: 0
+                svg
+                    margin-left: 10px
+                    width: 24px
+                    height: 24px
+                    background: $color-white
+                    border-radius: 50%
+
+    .footer-tel,
+    .footer-mail
+        display: flex
+        align-items: center
+        gap: 10px
+    &-icon
+        display: inline-block
+        width: 20px
+        height: 20px
+

@@ -1,0 +1,105 @@
+.card-graphics
+    position: relative
+    max-width: 480px
+    width: 100%
+    border: 1px solid $color-light-slate-gray
+    margin-bottom: 86px
+    +max-screen($breakpoint-xl)
+        max-width: 420px
+    +max-screen(1200px)
+        max-width: 370px
+    +max-screen($breakpoint-lg)
+        max-width: 275px
+    +max-screen($breakpoint-md)
+        max-width: calc(100% - 150px)
+    +max-screen($breakpoint-sm)
+        max-width: 100%
+    &:after
+        content: ''
+        position: absolute
+        top: -1px
+        width: 53px
+        height: 53px
+        border: 8px solid $color-peru
+        border-radius: 50%
+        background: $color-bg-light
+        +max-screen($breakpoint-sm)
+            display: none
+    &:before
+        content: attr(data-date)
+        font-size: clamp(20px, 1.25vw , 25px)
+        font-weight: 700
+        white-space: nowrap
+        position: absolute
+        +max-screen($breakpoint-md)
+            top: 60px
+            background: $color-bg-light
+            font-size: 16px
+        +max-screen($breakpoint-sm)
+            display: none
+    &:not(:last-of-type)
+        margin-bottom: 68px
+        +max-screen($breakpoint-sm)
+            margin-bottom: 30px
+    &:nth-of-type(odd)
+        margin-right: calc(50% + 62px)
+        margin-left: auto
+        +max-screen($breakpoint-md)
+            margin-left: 0
+            margin-right: 0
+        &:after
+            left: calc(100% + 36px)
+            +max-screen($breakpoint-md)
+                left: calc(100% + 97px)
+        &:before
+            left: calc(100% + 127px)
+            +max-screen($breakpoint-md)
+                left: calc(100% + 25px)
+    &:nth-of-type(even)
+        margin-left: calc(50% + 62px)
+        margin-right: auto
+        +max-screen($breakpoint-md)
+            margin-left: 0
+            margin-right: 0
+        &:after
+            right: calc(100% + 36px)
+            +max-screen($breakpoint-md)
+                right: unset
+                left: calc(100% + 97px)
+        &:before
+            right: calc(100% + 127px)
+            +max-screen($breakpoint-md)
+                right: unset
+                left: calc(100% + 25px)
+    .card-graphics
+        &__wrap
+            display: flex
+            flex-direction: column
+            height: 100%
+            padding: 57px 60px 47px
+            +max-screen($breakpoint-xl)
+                padding: 30px
+        &__title
+            margin-bottom: 15px
+        &__info
+            // font-size: 19.5px
+            margin-bottom: 122px
+            +max-screen($breakpoint-xxl)
+                margin-bottom: 80px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 60px
+        &__btn
+            margin-top: auto
+            display: flex
+            justify-content: center
+        &__category
+            position: absolute
+            bottom: 0
+            right: 0
+            z-index: 5
+            width: 42.5%
+            height: auto
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover

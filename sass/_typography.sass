@@ -1,0 +1,268 @@
+html, body
+  -webkit-overflow-scrolling: touch
+
+body
+    font-family: $font-family-base
+    font-size: clamp(15px, 0.9vw , 18px)
+    font-weight: $default-font-weight
+    font-style: normal
+    line-height: $default-line-height
+    color: $default-text-color
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -webkit-backface-visibility: hidden
+    -webkit-tap-highlight-color: transparent
+    // ::-moz-selection
+    //     color: $color-light
+    //     background: transparent
+    // ::selection
+    //     color: $color-light
+    //     background: transparent
+
+
+.text
+    &--style
+        
+    &--default,&--default *
+        font-family: $font-family-base
+        font-size: $default-font-size
+        font-weight: $default-font-weight
+        font-style: normal
+        line-height: $default-line-height
+
+    &--uppercase
+        text-transform: uppercase !important
+    &--transform--none
+        text-transform: none !important
+        
+    //&--left
+    //    text-align: left
+    //&--right
+    //    text-align: right
+    //&--center
+    //    text-align: center
+        
+    &--color
+        &--white
+            &,& *, &.content-block *
+                color: $color-white
+        &--light
+            &,& *
+                color: $color-light
+        &--dark
+            &, & *
+                color: $color-dark
+        &--default
+            &,& *
+                color: $default-text-color
+    &--columns--2
+        column-count: 2
+
+    &--underline
+        text-decoration: underline
+
+    &--spacing
+        letter-spacing: 0.05em
+
+    &--opacity
+        opacity: 0.6
+
+    &--size
+        &--12
+            font-size: 12px !important
+            line-height: 16px !important
+        &--14
+            font-size: 14px !important
+            line-height: 17px !important
+        &--16
+            font-size: 16px !important
+            line-height: normal !important
+        &--18
+            font-size: 18px !important
+            line-height: 1.5 !important
+        &--25
+            font-size: 25px !important
+            line-height: 30px !important
+            +max-screen($breakpoint-sm)
+                font-size: 20px !important
+                line-height: 25px !important
+        &--40
+            font-size: 40px !important
+            line-height: 40px !important
+            +max-screen($breakpoint-sm)
+                font-size: 35px !important
+                line-height: 35px !important
+
+    &--outline
+        color: transparent
+        -webkit-text-stroke: 1px $default-text-color
+        .content-block &
+            color: transparent
+        .text-color-white &
+            -webkit-text-stroke: 1px $color-white
+
+
+.font
+    &--primary
+        font-family: $font-family-base
+    &--secondary
+        font-family: $font-family-secondary
+    &--italic
+        font-style: italic
+    &--weight
+        &--300,
+        &--300 *
+            font-weight: 300
+        &--400,
+        &--400 *
+            font-weight: 400
+        &--500,
+        &--500 *
+            font-weight: 500
+        &--600,
+        &--600 *
+            font-weight: 600
+        &--700,
+        &--700 *
+            font-weight: 700
+        &--900,
+        &--900 *
+            font-weight: 900
+
+
+.p1
+    font-size: 15px
+    line-height: normal
+
+.p2
+    font-size: 18px
+    line-height: 22px
+
+.p3
+
+.p4
+    +max-screen($breakpoint-lg)
+    +max-screen($breakpoint-sm)
+
+
+h1,.h1
+    font-size: clamp(52px, 3.5vw, 72px)
+    line-height: 1
+    font-weight: 900
+    +max-screen($breakpoint-xl)
+    +max-screen($breakpoint-lg)
+        font-size: 60px
+    +max-screen($breakpoint-md)
+        font-size: 55px
+    +max-screen($breakpoint-sm)
+        font-size: calcFluidSize(35, 55, 320, $breakpoint-sm)
+        line-height: calcFluidSize(42, 60, 320, $breakpoint-sm)
+
+h2,.h2
+    font-size: clamp(34px, 2.6vw , 52px)
+    line-height: 1
+    font-weight: 700
+    +max-screen($breakpoint-lg)
+        font-size: 42px
+    +max-screen($breakpoint-sm)
+        font-size: 34px
+
+h3,.h3
+    font-size: clamp(20px, 1.65vw , 34px)
+    font-weight: 700
+
+h4,.h4
+    font-size: clamp(18px, 1.25vw , 25px)
+    font-weight: 700
+
+.h5,h5
+    font-size: clamp(17px, 1vw , 20px)
+    font-weight: 700
+    line-height: normal
+
+h6,.h6
+    font-size: clamp(16px, 0.85 , 17px)
+    font-weight: 700
+
+.link-underline
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+        height: 1px
+        background-color: $color-light
+        transition: 0.2s ease-out
+    &:hover:before
+        width: 0
+
+.checkbox-list
+    margin: -5px 0
+    li
+        padding: 5px 0
+        display: flex
+        &::before
+            display: inline-block
+            content: ''
+            width: 15px
+            min-width: 15px
+            height: 15px
+            background-image: url(../assets/images/icon-checkbox.svg)
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            margin-right: 20px
+            margin-top: 6px
+
+
+.content-block
+    font-weight: 400
+    > *:first-child
+        margin-top: 0
+    > *:not(:last-child)
+        margin-bottom: 20px
+    h1, h2, h3, h4, h5, h6
+        margin-bottom: 20px
+        margin-top: 20px
+    ul, ol
+        padding-left: 1rem
+        li:not(:last-of-type)
+            margin-bottom: 20px
+            +max-screen($breakpoint-xl)
+                margin-bottom: 12px
+    ul
+        li
+            list-style-type: disc
+    ol
+        li
+            list-style-type: decimal
+    p, li
+        word-wrap: break-word
+        hyphens: auto
+        text-align: justify
+    p
+        font-weight: 400
+        text-align: justify
+    hr
+        margin: 40px 0
+    img, iframe, video
+        width: 100%
+        height: auto
+        &:not(:first-child)
+            padding-top: 20px
+    .video__wrap
+        position: relative
+        width: 100%
+        height: 0
+        overflow: hidden
+        padding-bottom: 56.25%
+        iframe
+            position: absolute
+            width: 100%
+            height: 100%
+            object-fit: cover
+    blockquote
+        padding-left: 20px
+        border-left: 4px solid $color-peru

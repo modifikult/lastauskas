@@ -1,0 +1,37 @@
+aside.sidebar
+    height: fit-content
+    position: sticky
+    top: calc(150px + 10px)
+    +max-screen($breakpoint-xxl)
+        top: calc(130px + 10px)
+        +max-screen($breakpoint-xl)
+            top: calc(100px + 10px)
+        +max-screen(1200px)
+            top: calc(70px + 10px)
+        +max-screen($breakpoint-lg)
+            position: unset
+    .admin-bar &
+        top: calc(150px + 32px + 10px)
+        +max-screen($breakpoint-xxl)
+            top: calc(130px + 32px + 10px)
+        +max-screen($breakpoint-xl)
+            top: calc(100px + 32px + 10px)
+        +max-screen(1200px)
+            top: calc(70px + 32px + 10px)
+        +max-screen($breakpoint-lg)
+
+    .sidebar
+        &__title
+            margin-bottom: 10px
+        &__nav
+            display: flex
+            flex-direction: column
+            a
+                font-size: clamp(16px, 1vw , 20px)
+                display: block
+                padding: 25px 0
+                border-bottom: 1px solid $color-dark
+                +max-screen($breakpoint-xxl)
+                    padding: 20px 0
+                +max-screen($breakpoint-lg)
+                    padding: 18px 0

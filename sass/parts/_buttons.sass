@@ -1,0 +1,59 @@
+.button
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 360px
+    width: 100%
+    transition: $default-transition
+    &--dark
+        background: $color-dark-slate-gray
+        color: $color-light
+        border: 2px solid $color-dark-slate-gray
+        &:hover
+            background: $color-peru
+            border: 2px solid $color-peru
+        &-hover-outline
+            background: $color-dark-slate-gray
+            color: $color-light
+            border: 2px solid $color-dark-slate-gray
+            &:hover
+                background: transparent
+                color: $color-light-gray
+                border: 2px solid $color-light-gray
+    &--transparent
+        background: transparent
+        color: $color-peru
+        border: 2px solid transparent
+        &:hover
+            color: $color-dark-slate-gray
+            border: 2px solid transparent
+    &--outline
+        &-dark
+            background: transparent
+            color: $color-dark-slate-gray
+            border: 2px solid $color-dark-slate-gray
+            &:hover
+                background: $color-dark-slate-gray
+                color: $color-light
+                border: 2px solid $color-dark-slate-gray
+        &-light
+            background: transparent
+            color: $color-light-gray
+            border: 2px solid $color-light-gray
+            &:hover
+                background: $color-dark-slate-gray
+                color: $color-light
+                border: 2px solid $color-dark-slate-gray
+.button
+    &--sm
+        font-size: clamp(15px, 1vw , 18px)
+        font-weight: 500
+        padding: 0
+        +max-screen($breakpoint-xl)
+    &--md
+    &--lg
+        font-size: clamp(20px, 1.25vw , 25px)
+        font-weight: 700
+        padding: 26px 20px
+        +max-screen($breakpoint-xxl)
+            padding: 20px 20px

@@ -1,0 +1,28 @@
+section.content
+    padding: 156px 0 167px
+    +max-screen($breakpoint-xxl)
+        padding: 120px 0
+    +max-screen($breakpoint-xl)
+        padding: 90px 0
+    +max-screen($breakpoint-lg)
+        padding: 60px 0
+    .content
+        &__wrap
+        &__text
+            //word-wrap: break-word
+            //hyphens: auto
+            //text-align: justify
+            margin-bottom: 91px
+            +max-screen($breakpoint-lg)
+                margin-bottom: 40px
+            h1, h2, h3
+                margin-bottom: 50px
+            //p
+            //    font-weight: 400
+            //    &:not(:last-of-type)
+            //        margin-bottom: 20px
+        &__btn
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 23px

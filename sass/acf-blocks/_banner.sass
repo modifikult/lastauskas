@@ -1,0 +1,76 @@
+section.banner
+    .container
+        +max-screen($breakpoint-md)
+            padding: 0
+            max-width: 100%
+    .banner
+        &__wrap
+            display: flex
+            align-items: center
+            +max-screen($breakpoint-md)
+                flex-direction: column
+        &__col
+            &.col-left
+                max-width: 722px
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                margin: 0 auto
+                padding: 0 20px
+                +max-screen($breakpoint-md)
+                    margin-bottom: 20px
+                    text-align: center
+                    padding-top: 30px
+                    padding-bottom: 30px
+                    //min-height: calc(50vh - 40px)
+                    min-height: calc(30vh - 40px)
+                    justify-content: flex-end
+            &.col-right
+                max-width: 618px
+                width: 100%
+                +max-screen($breakpoint-md)
+                    max-width: 100%
+
+        &__title
+            // font-size: 52px
+            font-weight: 500
+            font-style: italic
+            margin-bottom: 0.5rem
+        &__subtitle
+            // font-size: 25px
+            font-weight: 500
+            margin-right: 20px
+            
+            +max-screen($breakpoint-md)
+                margin-right: 0
+        &__image
+            position: relative
+            overflow: hidden
+            // padding-bottom: 100%
+            width: 100%
+            // height: calc(100vh - 190px - 50px)
+            // min-height: 500px
+            display: flex
+            justify-content: center
+
+            // +max-screen($breakpoint-xxl) // Non header fixed sizes
+            //     height: calc(100vh - 140px - 40px)
+            // +max-screen($breakpoint-xl)
+            //     height: calc(100vh - 110px - 40px)
+            //     // width: calc(100% + 40px)
+            // +max-screen(1200px)
+            //     height: calc(100vh - 80px - 40px)
+            // +max-screen($breakpoint-md)
+            //     padding-bottom: 100%
+            //     height: 0
+            //     min-height: calc(50vh - 40px)
+                // width: 100%
+            // .admin-bar &
+            //     height: calc(100vh - 195px - 32px)
+            //     +max-screen($breakpoint-xxl)
+            //         height: calc(100vh - 117px - 32px)
+            img
+                width: auto
+                max-width: 100%
+                height: auto
